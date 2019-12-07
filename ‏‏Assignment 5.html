@@ -1,52 +1,66 @@
 <html>
-<html>
+  <html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="styles.css" />
+      <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/minecraftia" type="text/css"/>
+    </head>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
-</head>
-
-<body>
-    <div class="menu-bar">
-        <div class="building">Building Tools
-                <div class="tool-row">
-                <button class="pick-axe Btn"></button>
-                <button class="axe Btn"></button>
-                <div class="text-just">
-                <div class="tool-text">pick-axe</div>
-                <div class="tool-text">axe</div>
-            </div>
-            </div>
-            <div class="tool-row">
-                <button class="shovel Btn">  </button>
-                <button class="build-trunk Btn trunk">  </button>
-                <div class="tool-text">shovel</div>
-                <div class="tool-text">build-trunk</div>
-            </div>
-            <div class="tool-row">
-                <button class="build-tree Btn tree">  </button>
-                <button class="build-rock Btn rock">  </button>
-                <div class="tool-text">build-tree</div>
-                <div class="tool-text">build-rock</div>
-            </div>
-            <div class="tool-row">
-                <button class="build-lowerGround Btn lowerGround">  </button>
-                <button class="build-topGround Btn topGround">  </button>
-                <div class="tool-text">build-lowerGround</div>
-                <div class="tool-text">build-topGround</div>
-            </div>
-
+    <body>
+      <div class="overlay-screen">
+        <div class="overlay-page">
+          <span class="logo-span">
+            <img
+              id="logo-img"
+              src="./img/MinecraftLogo.png"
+              alt="MinecraftLogo"
+            />
+          </span>
+          <div class="buttons-container">
+            <button id="startGameBtn" class="overlay-btn">Start New Game</button>
+          </div>
         </div>
-    </div>
-    <div id="container">
+      </div>
+      <div class="menu-bar">
+        <div class="building">
+          TOOLS
+          <div class="tool-row">
+            <button class="pick-axe Btn"></button>
+            <button class="axe Btn"></button>
+            <div class="text-just">
+              <div class="tool-text">pick-axe</div>
+              <div class="tool-text">axe</div>
+            </div>
+          </div>
+          <div class="tool-row">
+            <button class="shovel Btn"></button>
+            <button class="build-trunk Btn trunk"></button>
+            <div class="tool-text">shovel</div>
+            <div class="tool-text">build-trunk</div>
+          </div>
+          <div class="tool-row">
+            <button class="build-tree Btn tree"></button>
+            <button class="build-rock Btn rock"></button>
+            <div class="tool-text">build-tree</div>
+            <div class="tool-text">build-rock</div>
+          </div>
+          <div class="tool-row">
+            <button class="build-lowerGround Btn lowerGround"></button>
+            <button class="build-topGround Btn topGround"></button>
+            <div class="tool-text">build-lowerGround</div>
+            <div class="tool-text">build-topGround</div>
+          </div>
+        </div>
+      </div>
+      <div id="container">
         <div class="inside" id="inside"></div>
-    </div>
+      </div>
 
-    <br><br>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="Assignment 5.JS"></script>
-
-
-</body>
-
+      <br /><br />
+      <script
+        type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
+      ></script>
+      <script src="Assignment 5.JS"></script>
+    </body>
+  </html>
 </html>
