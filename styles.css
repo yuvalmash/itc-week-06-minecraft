@@ -1,3 +1,6 @@
+body {
+  cursor: pointer;
+}
 #container {
   flex-wrap: wrap;
   position: absolute;
@@ -17,7 +20,8 @@
 
 .menu-bar {
   border: 1px solid #aa96da;
-  background-color: #07689f;
+  background-color: #11415d;
+  opacity: 95%;
   width: 150px;
   height: 500px;
   display: none;
@@ -27,8 +31,10 @@
   color: #ffffd2;
   text-align: center;
   font-family: "MinecraftiaRegular";
+  /* font-size: 25px; */
   font-weight: normal;
   font-style: normal;
+  margin-top: 25px;
 }
 
 .grid {
@@ -71,19 +77,19 @@
 }
 
 .shovel {
-  background-image: url(https://ae01.alicdn.com/kf/HTB1qH.wkjuhSKJjSspmq6AQDpXa3/1pcs-Minecraft-Toys-Minecraft-Foam-Weapons-Sword-Axe-Shovel-Gun-EVA-Model-Toys-Action-Figure-Toy.jpg_640x640.jpg);
+  background-image: url(http://www.rw-designer.com/icon-image/5541-256x256x32.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .axe {
-  background-image: url(https://gamepedia.cursecdn.com/minecraft_gamepedia/1/11/Wooden_Axe.png);
+  background-image: url(http://www.rw-designer.com/icon-image/5543-256x256x32.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .pick-axe {
-  background-image: url(https://cdn.shopify.com/s/files/1/0251/2155/4510/products/10852p_99c_1x_51f63dee-ed86-4bb6-8f90-c81543a9478f_2000x.jpg?v=1574871122);
+  background-image: url(http://www.rw-designer.com/icon-image/5540-256x256x32.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -103,18 +109,23 @@
 }
 
 .Btn {
-  width: 45%;
-  height: 12%;
+  width: 55px;
+  height: 55px;
+  font-size: 15px;
+  font-family: "MinecraftiaRegular";
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .tool-row {
-  padding-top: 10px;
-  font-size: small;
+  padding-top: 15px;
+  font-size: large;
 }
 
 .tool-text {
   display: inline;
-  font-size: small;
+  font-size: large;
 }
 
 .text-just {

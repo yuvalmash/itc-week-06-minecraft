@@ -1,3 +1,4 @@
+
 (function() {
   $("#startGameBtn").click(function() {
     $(".overlay-screen").css("display", "none");
@@ -7,20 +8,33 @@
   });
 })();
 
-var startGame = function() {
+
+
+var startGame = function () {
+
+
+  var chosenTool = '';
+  var counterRock = 0;
+  var counterTrunk = 0;
+  var counterTree = 0;
+  var counterTopGround = 0;
+  var counterLowerGround = 0;
+
+
+
   var mapTo = [];
 
   createGrid(10, 20);
 
   function createGrid(x, y) {
     for (var rows = 0; rows < x; rows++) {
-      var array2 = [];
+      var array2 = []
       for (var columns = 0; columns < y; columns++) {
-        array2.push("sky");
-      }
+        array2.push("sky")
+      };
       mapTo.push(array2);
-    }
-  }
+    };
+  };
 
   mapTo[7][3] = "trunk";
   mapTo[6][3] = "trunk";
@@ -56,95 +70,136 @@ var startGame = function() {
   for (var rows = 0; rows < 10; rows++) {
     for (var columns = 0; columns < 20; columns++) {
       if (mapTo[rows][columns] == "tree") {
-        $("#inside").append("<div class='grid tree'></div>");
-      } else if (mapTo[rows][columns] == "sky") {
-        $("#inside").append("<div class='grid sky'></div>");
-      } else if (mapTo[rows][columns] == "trunk") {
-        $("#inside").append("<div class='grid trunk'></div>");
-      } else if (mapTo[rows][columns] == "topGround") {
-        $("#inside").append("<div class='grid topGround'></div>");
-      } else if (mapTo[rows][columns] == "lowerGround") {
-        $("#inside").append("<div class='grid lowerGround'></div>");
-      } else if (mapTo[rows][columns] == "cloud") {
-        $("#inside").append("<div class='grid cloud'></div>");
-      } else if (mapTo[rows][columns] == "rock") {
-        $("#inside").append("<div class='grid rock'></div>");
+        $("#inside").append("<div class='grid tree'></div>")
+      }
+      else if (mapTo[rows][columns] == "sky") {
+        $("#inside").append("<div class='grid sky'></div>")
+      }
+      else if (mapTo[rows][columns] == "trunk") {
+        $("#inside").append("<div class='grid trunk'></div>")
+      }
+      else if (mapTo[rows][columns] == "topGround") {
+        $("#inside").append("<div class='grid topGround'></div>")
+
+      }
+      else if (mapTo[rows][columns] == "lowerGround") {
+        $("#inside").append("<div class='grid lowerGround'></div>")
+      }
+      else if (mapTo[rows][columns] == "cloud") {
+        $("#inside").append("<div class='grid cloud'></div>")
+      }
+      else if (mapTo[rows][columns] == "rock") {
+        $("#inside").append("<div class='grid rock'></div>")
       }
     }
   }
 
-  $(".grid").hover(
-    function borderB() {
-      $(this).toggleClass("borderHigh");
-    },
-    function() {
-      $(this).toggleClass("borderHigh");
-    }
+  $(".grid").hover(function borderB() {
+    $(this).toggleClass("borderHigh");
+  }, function () {
+    $(this).toggleClass("borderHigh")
+  }
   );
 
-  var chosenTool = "";
-  $("button.axe").click(function() {
+  var chosenTool = '';
+  $("button.axe").click(function () {
     chosenTool = "axe";
   });
-  $("button.axe").click(function() {
+  $("button.axe").click(function () {
     chosenTool = "axe";
   });
-  $(".grid").click(function() {
+  $(".grid").click(function () {
     let $item = $(this);
     if (chosenTool === "pick-axe" && $item.hasClass("rock")) {
       $(this).addClass("sky");
       $(this).removeClass("rock");
-    } else if (chosenTool === "build-rock" && $item.hasClass("sky")) {
+      counterRock++;
+      $("button.build-rock").html(`${counterRock}`);
+
+
+
+
+    }
+    else if (chosenTool === "build-rock" && $item.hasClass("sky") && counterRock > 0) {
       $(this).addClass("rock");
       $(this).removeClass("sky");
-    } else if (chosenTool === "axe" && $item.hasClass("tree")) {
+      counterRock--;
+      $("button.build-rock").html(`${counterRock}`);
+
+    }
+    else if (chosenTool === "axe" && $item.hasClass("tree")) {
       $(this).addClass("sky");
       $(this).removeClass("tree");
-    } else if (chosenTool === "axe" && $item.hasClass("trunk")) {
+      counterTree++;
+      $("button.build-tree").html(`${counterTree}`);
+    }
+    else if (chosenTool === "axe" && $item.hasClass("trunk")) {
       $(this).addClass("sky");
       $(this).removeClass("trunk");
-    } else if (chosenTool === "build-tree" && $item.hasClass("sky")) {
+      counterTrunk++;
+      $("button.build-trunk").html(`${counterTrunk}`);
+    }
+    else if (chosenTool === "build-tree" && $item.hasClass("sky") && counterTree > 0) {
       $(this).addClass("tree");
       $(this).removeClass("sky");
-    } else if (chosenTool === "build-trunk" && $item.hasClass("sky")) {
+      counterTree--;
+      $("button.build-tree").html(`${counterTree}`);
+    }
+    else if (chosenTool === "build-trunk" && $item.hasClass("sky") && counterTrunk > 0) {
       $(this).addClass("trunk");
       $(this).removeClass("sky");
-    } else if (chosenTool === "shovel" && $item.hasClass("topGround")) {
+      counterTrunk--;
+      $("button.build-trunk").html(`${counterTrunk}`);
+    }
+    else if (chosenTool === "shovel" && $item.hasClass("topGround")) {
       $(this).addClass("sky");
       $(this).removeClass("topGround");
-    } else if (chosenTool === "shovel" && $item.hasClass("lowerGround")) {
+      counterTopGround++;
+      $("button.build-topGround").html(`${counterTopGround}`);
+    }
+    else if (chosenTool === "shovel" && $item.hasClass("lowerGround")) {
       $(this).addClass("sky");
       $(this).removeClass("lowerGround");
-    } else if (chosenTool === "build-topGround" && $item.hasClass("sky")) {
+      counterLowerGround++;
+      $("button.build-lowerGround").html(`${counterTowerGround}`);
+    }
+    else if (chosenTool === "build-topGround" && $item.hasClass("sky") && counterTopGround > 0) {
       $(this).addClass("topGround");
       $(this).removeClass("sky");
-    } else if (chosenTool === "build-lowerGround" && $item.hasClass("sky")) {
+      counterTopGround--;
+      $("button.build-topGround").html(`${counterTopGround}`);
+    }
+    else if (chosenTool === "build-lowerGround" && $item.hasClass("sky") && counterLowerGround > 0) {
       $(this).addClass("lowerGround");
       $(this).removeClass("sky");
+      counterLowerGround--;
+      $("button.build-lowerGround").html(`${counterTowerGround}`);
     }
   });
-  $("button.pick-axe").click(function() {
+  $("button.pick-axe").click(function () {
     chosenTool = "pick-axe";
   });
-  $("button.build-rock").click(function() {
+  $("button.build-rock").click(function () {
     chosenTool = "build-rock";
   });
-  $("button.shovel").click(function() {
+  $("button.shovel").click(function () {
     chosenTool = "shovel";
   });
-  $("button.axe").click(function() {
+  $("button.axe").click(function () {
     chosenTool = "axe";
   });
-  $("button.build-topGround").click(function() {
+  $("button.build-topGround").click(function () {
     chosenTool = "build-topGround";
   });
-  $("button.build-lowerGround").click(function() {
+  $("button.build-lowerGround").click(function () {
     chosenTool = "build-lowerGround";
   });
-  $("button.build-trunk").click(function() {
+  $("button.build-trunk").click(function () {
     chosenTool = "build-trunk";
   });
-  $("button.build-tree").click(function() {
+  $("button.build-tree").click(function () {
     chosenTool = "build-tree";
   });
-};
+
+}
+
